@@ -73,15 +73,11 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     if(hasImageChanged) {
         const imgRes = await startUpload(files)
 
-			// @ts-ignore: Suppress type checking for the following line
-            if (imgRes && imgRes[0].fileUrl) {
-                // @ts-ignore: Suppress type checking for the following line
-                values.profile_photo = imgRes[0].fileUrl;
-            }
-
-        // if(imgRes && imgRes[0].fileUrl) {
-        //     values.profile_photo = imgRes[0].fileUrl;
-        // }
+		// @ts-ignore
+        if (imgRes && imgRes[0].fileUrl) {
+            // @ts-ignore
+            values.profile_photo = imgRes[0].fileUrl;
+        }
     }
 
     await updateUser({
