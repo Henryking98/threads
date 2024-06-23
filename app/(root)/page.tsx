@@ -1,11 +1,13 @@
 import ThreadCard from "@/components/cards/ThreadCard";
 import { fetchPosts } from "@/lib/actions/thread.actions";
-import { getUser } from "@propelauth/nextjs/server/app-router";
+// import { getUser } from "@propelauth/nextjs/server/app-router";
+import { getUserOrRedirect } from "@propelauth/nextjs/server/app-router";
+
 
 
 export default async function Home() {
   const result = await fetchPosts(1, 30)
-  const user = await getUser();
+  const user = await getUserOrRedirect();
 
   return (
     <>

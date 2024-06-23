@@ -1,6 +1,4 @@
 /* eslint-disable camelcase */
-// Resource: https://clerk.com/docs/users/sync-data-to-your-backend
-// Above article shows why we need webhooks i.e., to sync data to our backend
 
 // Resource: https://docs.svix.com/receiving/verifying-payloads/why
 // It's a good practice to verify webhooks. Above article shows why we should do it
@@ -42,7 +40,6 @@ export const POST = async (request: Request) => {
     "svix-signature": header.get("svix-signature"),
   };
 
-  // Propelauth webhook secret
   const wh = new Webhook(process.env.NEXT_PROPELAUTH_WEBHOOK_SECRET || "");
 
   let evnt: Event | null = null;
