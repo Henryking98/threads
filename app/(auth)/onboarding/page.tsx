@@ -1,24 +1,24 @@
 import AccountProfile from "@/components/forms/AccountProfile";
 import { fetchUser } from "@/lib/actions/user.actions";
-import { getUser } from "@propelauth/nextjs/server/app-router";
 import {redirect} from "next/navigation";
-
+import {currentUser} from '@clerk/nextjs';
 
 async function Page() {
-    const user = await getUser();
+    const user = await currentUser();
+
     if(!user) return null;
 
-    const userInfo = await fetchUser(user.userId)
+    const userInfo = await fetchUser(user.id);
 
-    if(userInfo.onboarded) redirect('/')
+    if(userInfo?.onboarded) redirect('/')
 
     const userData = {
-        id: user?.userId,
+        id: user?.id,
         objectId: userInfo?._id,
         username: userInfo ? userInfo?.username : user?.username,
         name: userInfo ? userInfo?.firstName : user?.firstName || "",
         bio: userInfo ? userInfo?.bio : "",
-        image: userInfo ? userInfo?.image : user?.properties?.picture_url,
+        image: userInfo ? userInfo?.image : user?.imageUrl,
     }
 
     return (

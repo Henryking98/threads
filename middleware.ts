@@ -1,13 +1,10 @@
-// middleware.ts
-import { authMiddleware } from "@propelauth/nextjs/server/app-router";
+ import { authMiddleware } from "@clerk/nextjs/server";
 
-export const middleware = authMiddleware;
+export default authMiddleware({
+  publicRoutes: ['/', '/api/webhook/clerk'],
+  ignoredRoutes: ['/api/webhook/clerk']
+});
 
 export const config = {
-  matcher: [
-    // REQUIRED: Match all request paths that start with /api/auth/
-    "/api/auth/(.*)",
-    // OPTIONAL: Don't match any static assets
-    "/((?!_next/static|_next/image|favicon.ico).*)",
-  ],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };

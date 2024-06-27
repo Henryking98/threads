@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getUser } from "@propelauth/nextjs/server/app-router";
+import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 import { profileTabs } from "@/constants";
@@ -11,7 +11,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import ThreadsTab from "@/components/shared/ThreadsTab";
 
 async function Page({ params }: { params: { id: string } }) {
-  const user = await getUser();
+  const user = await currentUser();
   if (!user) return null;
 
   const userInfo = await fetchUser(params.id);
@@ -21,7 +21,7 @@ async function Page({ params }: { params: { id: string } }) {
     <section>
       <ProfileHeader
         accountId={userInfo.id}
-        authUserId={user.userId}
+        authUserId={user.id}
         name={userInfo.name}
         username={userInfo.username}
         imgUrl={userInfo.image}
@@ -58,7 +58,7 @@ async function Page({ params }: { params: { id: string } }) {
             >
                 
               <ThreadsTab
-                currentUserId={user.userId}
+                currentUserId={user.id}
                 accountId={userInfo.id}
                 accountType="User"
               />

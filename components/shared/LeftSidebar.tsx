@@ -1,21 +1,15 @@
 "use client";
 
+import { SignedIn, SignOutButton, useAuth } from "@clerk/nextjs";
 import {sidebarLinks} from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
-import {usePathname} from 'next/navigation';
-import {useUser, useLogoutFunction, useRedirectFunctions} from "@propelauth/nextjs/client";
+import {usePathname, useRouter} from 'next/navigation';
 
 function LeftSidebar() {
     const pathname = usePathname();
-    const {user} = useUser();
-    const { redirectToLoginPage } = useRedirectFunctions();
-    const logoutFn = useLogoutFunction();
-
-    const handleLogout = async () => {
-        await logoutFn();
-        redirectToLoginPage();
-    };
+    const router = useRouter();
+    const { userId } = useAuth();
 
     return (
         <section className="custom-scrollbar leftsidebar">
@@ -23,7 +17,7 @@ function LeftSidebar() {
                 {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
 
-                    if(link.route === '/profile' && user) link.route = `${link.route}/${user?.userId}`;
+                    if(link.route === '/profile' && userId) link.route = `${link.route}/${userId}`;
 
                     return (
                     <Link
@@ -43,17 +37,19 @@ function LeftSidebar() {
             </div>
 
             <div className="mt-10 px-6">
-                {user && (
-                    <div className="flex cursor-pointer gap-4 p-4" onClick={handleLogout}>
-                        <Image
-                            src="/assets/logout.svg"
-                            alt="logout"
-                            width={24}
-                            height={24} 
-                        />
-                        <p className="text-light-2 max-lg:hidden">logout</p>
-                    </div>
-                )}
+                <SignedIn>
+                    <SignOutButton signOutCallback={() => router.push("/sign-in")}>
+                        <div className="flex cursor-pointer gap-4 p-4">
+                            <Image
+                                src="/assets/logout.svg"
+                                alt="logout"
+                                width={24}
+                                height={24}
+                            />
+                            <p className="text-light-1 max-lg:hidden">Logout</p>
+                        </div>
+                    </SignOutButton>
+                </SignedIn>
             </div>
         </section>
     )

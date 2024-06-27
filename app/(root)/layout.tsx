@@ -1,5 +1,3 @@
-import { AuthProvider } from "@propelauth/nextjs/client";
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
@@ -7,6 +5,8 @@ import Topbar from "@/components/shared/Topbar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import RightSidebar from "@/components/shared/RightSidebar";
 import Bottombar from "@/components/shared/Bottombar";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +17,12 @@ export const metadata = {
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html lang="en">
-      <AuthProvider authUrl={process.env.NEXT_PUBLIC_AUTH_URL!}>
+    <ClerkProvider 
+		appearance={{
+        	baseTheme: dark,
+      	}}
+	>
+      <html lang="en">
         <body className={inter.className}>
           <Topbar />
 
@@ -34,7 +38,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 
           <Bottombar />
         </body>
-      </AuthProvider>
-    </html>
+      </html>
+    </ClerkProvider>
   );
 }
