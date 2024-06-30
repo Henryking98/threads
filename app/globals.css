@@ -20,11 +20,21 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #7878a3;
   }
+
+  @layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+  }
+}
   
   @layer components {
   /* main */
   .main-container {
-    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1 px-6 pb-10 pt-28 max-md:pb-32 sm:px-10;
+    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1 px-6 pb-10 pt-28 max-md:pb-32 sm:px-10 overflow-y-auto;
   }
 
   /* Head Text */
@@ -98,7 +108,7 @@
   }
 
   .leftsidebar_link {
-    @apply relative flex justify-start gap-4 rounded-lg p-4;
+    @apply relative flex justify-start gap-4 rounded-lg p-4 hover:bg-primary-500 transition;
   }
 
   .pagination {
@@ -115,24 +125,23 @@
     @apply invert-[50%] brightness-200;
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
+  /* .custom-scrollbar::-webkit-scrollbar {
     width: 3px;
     height: 3px;
     border-radius: 2px;
-  }
+  } 
 
   .custom-scrollbar::-webkit-scrollbar-track {
     background: #09090a;
-  }
-
+  } 
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background: #5c5c7b;
     border-radius: 50px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #7878a3;
-  }
+  } */
 }
 
 /* Clerk Responsive fix */
