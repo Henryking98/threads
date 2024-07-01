@@ -32,7 +32,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           <main className="flex flex-row h-screen">
             <LeftSidebar />
 
-            <section className="main-container">
+            <section className="main-container scroller">
               <div className="w-full max-w-4xl">{children}</div>
             </section>
 

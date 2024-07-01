@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scrollbar-width: thin; 
-  scrollbar-color: #5c5c7b #09090a;
+.scroller {
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
