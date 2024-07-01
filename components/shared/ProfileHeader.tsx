@@ -32,7 +32,7 @@ function ProfileHeader({ accountId, authUserId, name, username, imgUrl, bio, typ
             <p className="text-base-medium text-gray-1">@{username}</p>
           </div>
         </div>
-        {/* {accountId === authUserId && type !== "Community" && (
+        {accountId === authUserId && type !== "Community" && (
           <Link href="/profile/edit">
             <div className="flex cursor-pointer gap-3 rounded-lg bg-dark-3 px-4 py-2">
               <Image
@@ -45,7 +45,7 @@ function ProfileHeader({ accountId, authUserId, name, username, imgUrl, bio, typ
               <p className="text-light-2 max-sm:hidden">Edit</p>
             </div>
           </Link>
-        )} */}
+        )}
       </div>
 
       <p className="mt-6 max-w-xl text-base-regular text-light-2">{bio}</p>
