@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scrollbar-width: thin; 
+  scrollbar-color: #5c5c7b #09090a;
+}
+
 ::-webkit-scrollbar {
     width: 3px;
     height: 3px;
