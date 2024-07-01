@@ -85,3 +85,7 @@ A full stack Threads clone using Next.js 14+ with a redesigned look transformed 
 👉 **Form Management with React Hook Form**: Efficient management of forms with React Hook Form for a streamlined user input experience.
 
 and many more, including code architecture and reusability.
+
+Setup:
+-download or clone the repository and run npm start to start the development server
+run npm run dev for the backend server or click the live site to view the site
