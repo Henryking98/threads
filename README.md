@@ -21,7 +21,7 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-A full stack Threads clone using Next.js 14+ with a redesigned look transformed from a Figma design, user interaction to community management, technical implementation, and various features, including nested deep comments, notifications, real-time-search, community search etc.  
+A full stack Threads clone using Next.js 14+ with a redesigned look transformed from a Figma design, user interaction to community management, technical implementation, and various features, including nested deep comments, notifications, real-time-search & community search etc.  
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
