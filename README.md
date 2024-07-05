@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <br />
+    <a href="#" target="_blank">
+      <img src="https://i.ibb.co/KDcr9gs/img-screenshot.png" alt="Project Banner">
+    </a>
+  <br />
 
-## Getting Started
+  <div>
+    <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
+    <img src="https://img.shields.io/badge/-MongoDB-black?style=for-the-badge&logoColor=white&logo=mongodb&color=47A248" alt="mongodb" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-Clerk-black?style=for-the-badge&logoColor=white&logo=clerk&color=6C47FF" alt="clerk" />
+    <img src="https://img.shields.io/badge/-Shadcn_UI-black?style=for-the-badge&logoColor=white&logo=shadcnui&color=000000" alt="shadcnui" />
+    <img src="https://img.shields.io/badge/-Zod-black?style=for-the-badge&logoColor=white&logo=zod&color=3E67B1" alt="zod" />
+    <img src="https://img.shields.io/badge/-Typescript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
+  </div>
 
-First, run the development server:
+  <h3 align="center">A full stack Threads Clone</h3>
+  
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## <a name="introduction">🤖 Introduction</a>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A full stack Threads clone using Next.js 14+ with a redesigned look transformed from a Figma design, user interaction to community management, technical implementation, and various features, including nested deep comments, notifications, real-time-search & community search etc.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js
+- MongoDB
+- Shadcn UI
+- TailwindCSS
+- Clerk
+- Webhooks
+- Serverless APIs
+- React Hook Form
+- Zod
+- TypeScript
 
-## Learn More
+## <a name="features">🔋 Features</a>
 
-To learn more about Next.js, take a look at the following resources:
+👉 **Authentication**: Authentication using Clerk for email, password, and social logins (Google and GitHub) with a comprehensive profile management system.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👉 **Visually Appealing Home Page**: A visually appealing home page showcasing the latest threads for an engaging user experience.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+👉 **Create Thread Page**: A dedicated page for users to create threads, fostering community engagement
 
-## Deploy on Vercel
+👉 **Commenting Feature**: A commenting feature to facilitate discussions within threads.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👉 **Nested Commenting**: Commenting system with nested threads, providing a structured conversation flow.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+👉 **User Search with Pagination**: A user search feature with pagination for easy exploration and discovery of other users.
+
+👉 **Activity Page**: Display notifications on the activity page when someone comments on a user's thread, enhancing user engagement.
+
+👉 **Profile Page**: User profile pages for showcasing information and enabling modification of profile settings.
+
+👉 **Create and Invite to Communities**: Allow users to create new communities and invite others using customizable template emails.
+
+👉 **Community Member Management**: A user-friendly interface to manage community members, allowing role changes and removals.
+
+👉 **Admin-Specific Community Threads**: Enable admins to create threads specifically for their community.
+
+👉 **Community Search with Pagination**: A community search feature with pagination for exploring different communities.
+
+👉 **Community Profiles**: Display community profiles showcasing threads and members for a comprehensive overview.
+
+👉 **Figma Design Implementation**: Transform Figma designs into a fully functional application with pixel-perfect and responsive design.
+
+👉 **Blazing-Fast Performance**: Optimal performance and instantaneous page switching for a seamless user experience.
+
+👉 **Server Side Rendering**: Utilize Next.js with Server Side Rendering for enhanced performance and SEO benefits.
+
+👉 **MongoDB with Complex Schemas**: Handle complex schemas and multiple data populations using MongoDB.
+
+👉 **File Uploads with UploadThing**: File uploads using UploadThing for a seamless media sharing experience.
+
+👉 **Real-Time Events Listening**: Real-time events listening with webhooks to keep users updated.
+
+👉 **Middleware, API Actions, and Authorization**: Utilize middleware, API actions, and authorization for robust application security.
+
+👉 **Next.js Layout Route Groups**: New Next.js layout route groups for efficient routing
+
+👉 **Data Validation with Zod**: Data integrity with data validation using Zod
+
+👉 **Form Management with React Hook Form**: Efficient management of forms with React Hook Form for a streamlined user input experience.
+
+and many more, including code architecture and reusability.
+
+Setup:
+-download or clone the repository and run npm start to start the development server
+run npm run dev for the backend server or click the live site to view the site
